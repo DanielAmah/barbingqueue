@@ -6,19 +6,18 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, BackHandler, Dimensions, Image } from 'react-native';
-import { Container, Button, Header, Content, Form, Item, Input, Label, Icon } from 'native-base';
+import { Container, Button, Header, Content, Form, Item, Input, Label, Icon, Body, Title, Left, Right } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-// import Icon from 'react-native-vector-icons/Ionicons';
 
 
 type Props = {};
 
-export default class SignIn extends React.Component {
+export default class ForgotPassword extends React.Component {
 
   static navigationOptions = {
     header: null,
-   headerLeft: null,
-   gesturesEnabled: false,
+    headerLeft: null,
+    gesturesEnabled: false,
   };
 
   constructor(props) {
@@ -26,12 +25,8 @@ export default class SignIn extends React.Component {
 
   }
 
-  _handleSignUp = ()=> {
-    this.props.navigation.push('SignUp')
-  }
-
-  _handleForgotPassword =()=> {
-    this.props.navigation.push('ForgotPassword')
+  _handleSignIn = ()=> {
+    this.props.navigation.push('Sign')
   }
 
   componentDidMount() {
@@ -39,13 +34,18 @@ export default class SignIn extends React.Component {
   }
 
   handleBackButtonClick = () => {
-      this.props.navigation.navigate("SignUp");
+      this.props.navigation.navigate("ForgotPassword");
       return true;
   };
 
   render() {
     return (
       <Container style={styles.container}>
+      <Header>
+        <Body style={{ flex: 1, alignItems:'center'}}>
+          <Title>Forgot Password</Title>
+        </Body>
+      </Header>
       <Content>
 
       <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 25,  marginTop: 40,}}>
@@ -55,29 +55,23 @@ export default class SignIn extends React.Component {
 
         <Form>
           <Item>
-          <Icon ios='ios-person-outline' android="ios-person" style={{fontSize: 20, color: '#FF4F19'}}  />
-          <Input placeholder='User Name' />
+          <Icon ios='ios-mail-outline' android="ios-mail" style={{fontSize: 20, color: '#FF4F19'}}  />
+          <Input placeholder='Email Address' />
           </Item>
-          <Item>
-          <Icon ios='ios-lock-outline' android="ios-lock" style={{fontSize: 20, color: '#FF4F19'}}  />
-          <Input secureTextEntry={true} placeholder='Password' />
-          <Text  style={{ color: '#FF4F19', marginRight: 20}} onPress={this._handleForgotPassword}>
-            Forgot ?
-          </Text>
-          </Item>
+
           <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 25,  marginTop: 30,}}>
           <Grid>
             <Col>
             <Button rounded danger style={{padding: 20, width: 150, justifyContent: 'center', backgroundColor: '#FF4F19'}}>
-            <Text  style={{textAlign: 'center',  color: '#ffffff' }}>Login</Text>
+            <Text  style={{textAlign: 'center',  color: '#ffffff' }}>Reset Password</Text>
           </Button>
             </Col>
             <Col style={{ marginLeft: 15 }}>
             <Text  style={{ color: '#FF4F19', marginRight: 10}} >
-              New user ?
+              Remember?
             </Text>
             <Button transparent primary small>
-              <Text style={{ color: '#FF4F19', marginRight: 10, fontSize: 17, fontWeight: 'bold'}} onPress={this._handleSignUp}>SIGN UP</Text>
+              <Text style={{ color: '#FF4F19', marginRight: 10, fontSize: 17, fontWeight: 'bold'}} onPress={this._handleSignIn}>LOGIN</Text>
             </Button>
             </Col>
           </Grid>

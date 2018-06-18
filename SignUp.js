@@ -52,11 +52,11 @@ export default class SignUp extends React.Component {
           </Item>
           <Item>
             <Icon ios='ios-mail-outline' android="md-mail" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input placeholder='Email' />
+            <Input keyboardType={'email-address'} placeholder='Email' />
           </Item>
           <Item>
             <Icon ios='ios-call-outline' android="md-call" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input placeholder='Phone Number' />
+            <Input keyboardType={'phone-pad'} placeholder='Phone Number' />
           </Item>
           <Item>
             <Icon ios='ios-lock-outline' android="ios-lock" style={{fontSize: 20, color: '#FF4F19'}}  />
