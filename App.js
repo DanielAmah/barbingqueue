@@ -12,6 +12,7 @@ import { createStackNavigator } from 'react-navigation';
 import IntroSlider from './IntroSlider';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import ForgotPassword from './forgotPassword';
 
 
 type Props = {};
@@ -20,6 +21,7 @@ const RootStack = createStackNavigator({
   Home: IntroSlider,
   Sign: SignIn,
   SignUp: SignUp,
+  ForgotPassword: ForgotPassword,
   },
   {
     initialRouteName: 'Home'
@@ -41,6 +43,7 @@ export default class App extends Component<Props> {
     <IntroSlider navigation={this.props.navigation}/>
     <SignUp navigation={this.props.navigation}/>
     <SignIn navigation={this.props.navigation}/>
+    <ForgotPassword navigation={this.props.navigation}/>
     </View>
     return (
       <RootStack />
