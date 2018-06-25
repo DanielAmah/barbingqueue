@@ -7,22 +7,20 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Platform, StyleSheet, Text, View, BackHandler, Dimensions, Image } from 'react-native';
 import { Container, Button, Header, Content, Form, Item,
-          Input, Label, Icon, Body, Title, Left, Right, Subtitle, Drawer } from 'native-base';
+          Input, Label, Icon, Body, Title, Left, Right, Subtitle, Drawer,
+          Footer, FooterTab,
+        } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import SideBar from './SideBar';
+import Profile from './Profile';
+import Queue from './Queue';
+import Search from './Search'
+import HomeScreen from './HomeScreen';
 
-'./assets/images/splash_screen.psd'
 type Props = {};
 
+
 export default class Home extends React.Component {
-
-  state = {
-    modalVisible: false,
-  };
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
 
   static navigationOptions = {
     header: null,
@@ -32,8 +30,12 @@ export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.state = {index: 0} // default screen index
   }
+
+  switchScreen(index) {
+    this.setState({index: index})
+ }
 
   _handleSignIn = ()=> {
     this.props.navigation.push('Sign')
@@ -48,55 +50,57 @@ export default class Home extends React.Component {
       return true;
   };
 
-  closeDrawer(){
-    this._drawer._root.close()
-  };
-  openDrawer(){
-    this._drawer._root.open()
-  };
-
-
-
   render() {
+    let AppComponent = null;
+    if (this.state.index == 0) {
+      AppComponent = HomeScreen
+   } else if(this.state.index == 1) {
+      AppComponent = Search
+   }else if(this.state.index == 2) {
+    AppComponent = Queue
+   }else {
+    AppComponent = Profile
+   }
+
+
     return (
-      <Drawer
-      ref={(ref) => { this._drawer = ref; }}
-      content={<SideBar navigator={this._navigator} />}
-      onClose={()=> this.closeDrawer()}
-      openDrawerOffset={0.3}
-      >
+      <Container>
 
-      <Container style={styles.container}>
-      <Header style={{backgroundColor: '#41021B'}} androidStatusBarColor="#41021B" iosBarStyle="light-content">
-      <Left style={{flex: 1}}>
-        <Button transparent onPress={()=> this.openDrawer()}>
-          <Icon ios="ios-menu-outline" android="md-menu" style={{fontSize: 30, color: '#FFF'}}  />
-        </Button>
-      </Left>
-        <Body style={{ flex: 1, alignItems:'center', justifyContent: 'center'}}>
-          <Title style={{color: '#fff'}}>Home</Title>
-          <Subtitle style={{color: '#fff'}}>Barbing Queue App</Subtitle>
-        </Body>
-        <Right style={{flex: 1}}>
-        <Button transparent>
-          <Icon ios="ios-add-outline" android="md-add" style={{fontSize: 30, color: '#FFF'}}  />
-        </Button>
-        <Button transparent>
-        <Icon ios="ios-search-outline" android="md-search" style={{fontSize: 30, color: '#FFF'}}  />
-      </Button>
-      </Right>
-      </Header>
-      <Content>
-
+      <Content scrollEnabled={false}>
+      <AppComponent/>
       </Content>
+
+      <Footer style={{backgroundColor: '#FFFFFF'}}>
+          <FooterTab style={{backgroundColor: '#FFFFFF'}}>
+            <Button vertical active={this.state.index == 0}
+            onPress={() => this.switchScreen(0)}>
+              <Icon name="home" style={styles.icon} />
+            </Button>
+            <Button vertical active={this.state.index == 1}
+            onPress={() => this.switchScreen(1)}>
+              <Icon name="search" style={styles.icon} />
+            </Button>
+            <Button vertical active={this.state.index == 2}
+            onPress={() => this.switchScreen(2)}>
+              <Icon active name="time" style={styles.icon} />
+            </Button>
+            <Button vertical active={this.state.index == 3}
+            onPress={() => this.switchScreen(3)}>
+              <Icon name="contact" style={styles.icon} />
+            </Button>
+          </FooterTab>
+        </Footer>
+
       </Container>
-      </Drawer>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: '#fff',
+    backgroundColor: '#01041F',
+  },
+  icon: {
+    fontSize: 30
   }
 })
