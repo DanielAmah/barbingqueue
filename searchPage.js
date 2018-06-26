@@ -57,6 +57,7 @@ export default class SearchPage extends React.Component {
       </Body>
     </Header>
       <Content>
+      <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18, marginBottom: 5, marginTop: 5 }}> 7 barbers found </Text>
         <List>
           <ListItem avatar>
             <Left>
@@ -72,10 +73,10 @@ export default class SearchPage extends React.Component {
                 maxStars={5}
                 rating={this.state.starCount}
                 fullStarColor={'orange'}
-                starSize={25}
+                starSize={20}
                 containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
               />
-              <Text  style={{fontSize: 14, fontWeight: '900'}}>Audrey Benedict</Text>
+              <Text  style={{fontSize: 13, fontWeight: '900'}}>Audrey Benedict</Text>
               <Text note>1 Grafon Street, BN2 1AQ</Text>
             </Body>
             <Right>
@@ -98,14 +99,14 @@ export default class SearchPage extends React.Component {
                 maxStars={5}
                 rating={4}
                 fullStarColor={'orange'}
-                starSize={25}
+                starSize={20}
                 containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
               />
-              <Text style={{fontSize: 14, fontWeight: '900'}}>James Smith</Text>
+              <Text style={{fontSize: 13, fontWeight: '900'}}>James Smith</Text>
               <Text note>273 London Road, BN2 1AQ</Text>
             </Body>
             <Right>
-              <Text note  style={{fontSize: 14, fontWeight: '900', top: 5}}>3053.9 miles</Text>
+              <Text note  style={{fontSize: 14, fontWeight: '900'}}>3053.9 miles</Text>
             </Right>
           </ListItem>
         </List>
@@ -124,14 +125,14 @@ export default class SearchPage extends React.Component {
                 maxStars={5}
                 rating={4.5}
                 fullStarColor={'orange'}
-                starSize={25}
+                starSize={20}
                 containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
               />
-              <Text style={{fontSize: 14, fontWeight: '900'}}>Gabriel Stone</Text>
+              <Text style={{fontSize: 13, fontWeight: '900'}}>Gabriel Stone</Text>
               <Text note>9 Manchester Street, BN2</Text>
             </Body>
             <Right>
-              <Text note  style={{fontSize: 14, fontWeight: '900', top: 5}}>3053.9 miles</Text>
+              <Text note  style={{fontSize: 14, fontWeight: '900'}}>3053.9 miles</Text>
             </Right>
           </ListItem>
         </List>
@@ -150,10 +151,62 @@ export default class SearchPage extends React.Component {
                 maxStars={5}
                 rating={this.state.starCount}
                 fullStarColor={'orange'}
-                starSize={25}
+                starSize={20}
                 containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
               />
-              <Text  style={{fontSize: 14, fontWeight: '900'}}>Audrey Benedict</Text>
+              <Text  style={{fontSize: 13, fontWeight: '900'}}>Audrey Benedict</Text>
+              <Text note>1 Grafon Street, BN2 1AQ</Text>
+            </Body>
+            <Right>
+              <Text note  style={{fontSize: 14, fontWeight: '900'}}>3053.9 miles</Text>
+            </Right>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem avatar>
+            <Left>
+            <Thumbnail source={require('./assets/images/barber2.jpg')} />
+            </Left>
+            <Body>
+              <StarRating
+                disabled={false}
+                emptyStar={'ios-star-outline'}
+                fullStar={'ios-star'}
+                halfStar={'ios-star-half'}
+                iconSet={'Ionicons'}
+                maxStars={5}
+                rating={this.state.starCount}
+                fullStarColor={'orange'}
+                starSize={20}
+                containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
+              />
+              <Text  style={{fontSize: 13, fontWeight: '900'}}>Audrey Benedict</Text>
+              <Text note>1 Grafon Street, BN2 1AQ</Text>
+            </Body>
+            <Right>
+              <Text note  style={{fontSize: 14, fontWeight: '900'}}>3053.9 miles</Text>
+            </Right>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem avatar>
+            <Left>
+            <Thumbnail source={require('./assets/images/barber2.jpg')} />
+            </Left>
+            <Body>
+              <StarRating
+                disabled={false}
+                emptyStar={'ios-star-outline'}
+                fullStar={'ios-star'}
+                halfStar={'ios-star-half'}
+                iconSet={'Ionicons'}
+                maxStars={5}
+                rating={this.state.starCount}
+                fullStarColor={'orange'}
+                starSize={20}
+                containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
+              />
+              <Text  style={{fontSize: 13, fontWeight: '900'}}>Audrey Benedict</Text>
               <Text note>1 Grafon Street, BN2 1AQ</Text>
             </Body>
             <Right>
@@ -176,62 +229,10 @@ export default class SearchPage extends React.Component {
                 maxStars={5}
                 rating={this.state.starCount}
                 fullStarColor={'orange'}
-                starSize={25}
+                starSize={20}
                 containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
               />
-              <Text  style={{fontSize: 14, fontWeight: '900'}}>Audrey Benedict</Text>
-              <Text note>1 Grafon Street, BN2 1AQ</Text>
-            </Body>
-            <Right>
-              <Text note  style={{fontSize: 14, fontWeight: '900', top: 5}}>3053.9 miles</Text>
-            </Right>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem avatar>
-            <Left>
-            <Thumbnail source={require('./assets/images/barber2.jpg')} />
-            </Left>
-            <Body>
-              <StarRating
-                disabled={false}
-                emptyStar={'ios-star-outline'}
-                fullStar={'ios-star'}
-                halfStar={'ios-star-half'}
-                iconSet={'Ionicons'}
-                maxStars={5}
-                rating={this.state.starCount}
-                fullStarColor={'orange'}
-                starSize={25}
-                containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
-              />
-              <Text  style={{fontSize: 14, fontWeight: '900'}}>Audrey Benedict</Text>
-              <Text note>1 Grafon Street, BN2 1AQ</Text>
-            </Body>
-            <Right>
-              <Text note  style={{fontSize: 14, fontWeight: '900', top: 5}}>3053.9 miles</Text>
-            </Right>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem avatar>
-            <Left>
-            <Thumbnail source={require('./assets/images/barber2.jpg')} />
-            </Left>
-            <Body>
-              <StarRating
-                disabled={false}
-                emptyStar={'ios-star-outline'}
-                fullStar={'ios-star'}
-                halfStar={'ios-star-half'}
-                iconSet={'Ionicons'}
-                maxStars={5}
-                rating={this.state.starCount}
-                fullStarColor={'orange'}
-                starSize={25}
-                containerStyle={{marginRight: Platform.OS === 'ios' ? 50 : 80}}
-              />
-              <Text  style={{fontSize: 14, fontWeight: '900'}}>Audrey Benedict</Text>
+              <Text  style={{fontSize: 13, fontWeight: '900'}}>Audrey Benedict</Text>
               <Text note>1 Grafon Street, BN2 1AQ</Text>
             </Body>
             <Right>
