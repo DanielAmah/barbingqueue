@@ -18,7 +18,7 @@ import SideBar from './SideBar';
 
 type Props = {};
 
-export default class Home extends React.Component {
+export default class Search extends React.Component {
 
   static navigationOptions = {
     header: null,
