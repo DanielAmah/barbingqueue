@@ -16,7 +16,7 @@ import ForgotPassword from './forgotPassword';
 import Home from './Home';
 import Registration from './Registration';
 import SearchPage from './searchPage';
-
+import Map from './map';
 
 type Props = {};
 
@@ -27,7 +27,8 @@ const RootStack = createStackNavigator({
   ForgotPassword: ForgotPassword,
   Main: Home,
   Registration: Registration,
-  search: SearchPage
+  search: SearchPage,
+  map: Map
   },
   {
     initialRouteName: 'search'
