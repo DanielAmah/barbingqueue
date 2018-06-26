@@ -13,6 +13,8 @@
     "react-native": "0.55.4",
     "react-native-app-intro-slider": "^0.2.4",
     "react-native-global-font": "^1.0.1",
+    "react-native-linear-gradient": "^2.4.0",
+    "react-native-modal": "^6.1.0",
     "react-native-splash-screen": "^3.0.9",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.3.1"

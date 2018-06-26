@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, BackHandler, Dimensions, Image } from 'react-native';
+import { Platform, StyleSheet, Text, View, BackHandler, Dimensions, Image, ImageBackground, StatusBar } from 'react-native';
 import { Container, Button, Header, Content, Form, Item, Input, Label, Icon } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 // import Icon from 'react-native-vector-icons/Ionicons';
@@ -13,7 +13,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 type Props = {};
 
-export default class SignUp extends React.Component {
+export default class SignIn extends React.Component {
 
   static navigationOptions = {
     header: null,
@@ -24,6 +24,14 @@ export default class SignUp extends React.Component {
   constructor(props) {
     super(props);
 
+  }
+
+  _handleSignUp = ()=> {
+    this.props.navigation.push('SignUp')
+  }
+
+  _handleForgotPassword =()=> {
+    this.props.navigation.push('ForgotPassword')
   }
 
   componentDidMount() {
@@ -37,71 +45,60 @@ export default class SignUp extends React.Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <ImageBackground source={require('./assets/images/app_background.png')}
+      style={styles.backgroundImage}>
+      <StatusBar
+      backgroundColor="#01041F"
+      barStyle="light-content"
+      />
+      <Container style={{backgroundColor: "#01041F" }}>
       <Content>
 
-      <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 25,  marginTop: 40,}}>
+      <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 10,  marginTop: 60,}}>
         <Image source={require('./assets/images/logo.png')}   style={{  flex: 1,
-          aspectRatio: 1.5, resizeMode: 'contain', justifyContent: 'center', alignContent: 'center' }} />
+          aspectRatio: 1, resizeMode: 'contain', width: 200, height: 200 }} />
       </Content>
 
-        <Form>
-          <Item>
-            <Icon ios='ios-person-outline' android="ios-person" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input placeholder='User Name' />
+        <Form style={{ marginTop: 50, marginLeft: 15, marginRight: 15 }}>
+        <Text style={{color: "#CF87A4", fontSize: 20,  left: (Dimensions.get('window').width / 4), bottom: 20}}> LET'S MEET YOU </Text>
+          <Item rounded style={{borderColor: "#CF87A4"}}>
+          <Icon ios='ios-person-outline' android="ios-person" style={{fontSize: 20, color: "#CF87A4"}}  />
+          <Input placeholder='First Name' placeholderTextColor="#CF87A4" />
           </Item>
-          <Item>
-            <Icon ios='ios-mail-outline' android="md-mail" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input keyboardType={'email-address'} placeholder='Email' />
+          <Item rounded style={{marginTop: 20, borderColor: "#CF87A4"}}>
+          <Icon ios='ios-person-outline' android="ios-person" style={{fontSize: 20, color: "#CF87A4"}}  />
+          <Input placeholder='Last Name' placeholderTextColor="#CF87A4" />
           </Item>
-          <Item>
-            <Icon ios='ios-call-outline' android="md-call" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input keyboardType={'phone-pad'} placeholder='Phone Number' />
-          </Item>
-          <Item>
-            <Icon ios='ios-lock-outline' android="ios-lock" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input secureTextEntry={true} placeholder='Password' />
-          </Item>
-          <Item>
-            <Icon ios='ios-lock-outline' android="ios-lock" style={{fontSize: 20, color: '#FF4F19'}}  />
-            <Input secureTextEntry={true} placeholder='Confirm Password' />
-          </Item>
-          <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 25,  marginTop: 30,}}>
-            <Grid>
-              <Col>
-              <Button rounded danger style={{padding: 20, width: 150, justifyContent: 'center', backgroundColor: '#FF4F19'}}>
-              <Text  style={{textAlign: 'center',  color: '#ffffff' }}>Sign Up</Text>
-            </Button>
-              </Col>
-              <Col style={{ marginLeft: 15 }}>
-              <Text  style={{ color: '#FF4F19', marginRight: 10}} >
-                Already registered ?
-              </Text>
-              <Button transparent primary small>
-                <Text style={{ color: '#FF4F19', marginRight: 10, fontSize: 17, fontWeight: 'bold'}}>SIGN IN</Text>
-              </Button>
-              </Col>
-            </Grid>
-          </Content>
+          <Content style={{ flex: 1,  left: (Dimensions.get('window').width / 3) + 10,  marginTop: 30,}}>
 
-          <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 5) - 25,  marginTop: 40,}}>
-          <Button iconLeft transparent primary small>
-          <Icon name="logo-facebook" style={{marginRight: 10}} />
-          <Text>Sign in with facebook</Text>
-        </Button>
-        <Button iconLeft transparent primary small>
-          <Icon name="logo-google" style={{marginRight: 10, color: "red"}} />
-          <Text>Sign in with google</Text>
-        </Button>
+            <View style={styles.buttonCircle}>
+            <Icon ios='ios-arrow-dropright-outline' android="ios-arrow-dropright-outline"
+            style={{fontSize: 60, color: "#CF87A4"}}  />
+            </View>
           </Content>
         </Form>
        </Content>
       </Container>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+  backgroundImage: {
+    flex: 1,
+    width: null,
+    height: null
+},
+
+buttonCircle: {
+  width: 80,
+  height: 80,
+  borderRadius: 20,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
   container:{
     backgroundColor: '#fff',
   }

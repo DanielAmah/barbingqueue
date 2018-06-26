@@ -41,9 +41,9 @@ export default class ForgotPassword extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
-      <Header>
+      <Header style={{backgroundColor: '#41021B'}} androidStatusBarColor="#41021B" iosBarStyle="light-content">
         <Body style={{ flex: 1, alignItems:'center'}}>
-          <Title>Forgot Password</Title>
+          <Title style={{color: '#fff'}}>Forgot Password</Title>
         </Body>
       </Header>
       <Content>
@@ -55,23 +55,23 @@ export default class ForgotPassword extends React.Component {
 
         <Form>
           <Item>
-          <Icon ios='ios-mail-outline' android="ios-mail" style={{fontSize: 20, color: '#FF4F19'}}  />
+          <Icon ios='ios-mail-outline' android="ios-mail" style={{fontSize: 20, color: '#41021B'}}  />
           <Input placeholder='Email Address' />
           </Item>
 
           <Content style={{ flexDirection: 'row',  left: (Dimensions.get('window').width / 4) - 25,  marginTop: 30,}}>
           <Grid>
             <Col>
-            <Button rounded danger style={{padding: 20, width: 150, justifyContent: 'center', backgroundColor: '#FF4F19'}}>
+            <Button rounded danger style={{padding: 20, width: 150, justifyContent: 'center', backgroundColor: '#41021B'}}>
             <Text  style={{textAlign: 'center',  color: '#ffffff' }}>Reset Password</Text>
           </Button>
             </Col>
             <Col style={{ marginLeft: 15 }}>
-            <Text  style={{ color: '#FF4F19', marginRight: 10}} >
+            <Text  style={{ color: '#41021B', marginRight: 10}} >
               Remember?
             </Text>
             <Button transparent primary small>
-              <Text style={{ color: '#FF4F19', marginRight: 10, fontSize: 17, fontWeight: 'bold'}} onPress={this._handleSignIn}>LOGIN</Text>
+              <Text style={{ color: '#41021B', marginRight: 10, fontSize: 17, fontWeight: 'bold'}} onPress={this._handleSignIn}>LOGIN</Text>
             </Button>
             </Col>
           </Grid>

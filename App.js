@@ -13,6 +13,9 @@ import IntroSlider from './IntroSlider';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ForgotPassword from './forgotPassword';
+import Home from './Home';
+import Registration from './Registration';
+import SearchPage from './searchPage';
 
 
 type Props = {};
@@ -22,9 +25,12 @@ const RootStack = createStackNavigator({
   Sign: SignIn,
   SignUp: SignUp,
   ForgotPassword: ForgotPassword,
+  Main: Home,
+  Registration: Registration,
+  search: SearchPage
   },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'search'
   }
 );
 
@@ -40,10 +46,11 @@ export default class App extends Component<Props> {
 
   render() {
     <View>
-    <IntroSlider navigation={this.props.navigation}/>
-    <SignUp navigation={this.props.navigation}/>
-    <SignIn navigation={this.props.navigation}/>
-    <ForgotPassword navigation={this.props.navigation}/>
+      <IntroSlider navigation={this.props.navigation}/>
+      <SignUp navigation={this.props.navigation}/>
+      <SignIn navigation={this.props.navigation}/>
+      <ForgotPassword navigation={this.props.navigation}/>
+      <Home navigation={this.props.navigation}/>
     </View>
     return (
       <RootStack />
