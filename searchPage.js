@@ -48,6 +48,10 @@ export default class SearchPage extends React.Component {
       return true;
   };
 
+  handleBarber = ()=> {
+    this.props.navigation.push('barber')
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -59,7 +63,7 @@ export default class SearchPage extends React.Component {
       <Content>
       <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18, marginBottom: 5, marginTop: 5 }}> 7 barbers found </Text>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>
@@ -85,7 +89,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber1.jpg')} />
             </Left>
@@ -111,7 +115,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>
@@ -137,7 +141,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>
@@ -163,7 +167,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>
@@ -189,7 +193,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>
@@ -215,7 +219,7 @@ export default class SearchPage extends React.Component {
           </ListItem>
         </List>
         <List>
-          <ListItem avatar>
+          <ListItem avatar onPress={this.handleBarber}>
             <Left>
             <Thumbnail source={require('./assets/images/barber2.jpg')} />
             </Left>

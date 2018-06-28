@@ -31,11 +31,11 @@ export default class IntroSlider extends React.Component {
   }
 
   _onDone = () => {
-    this.props.navigation.push('Sign')
+    this.props.navigation.push('Registration')
   }
 
   _onSkip = () => {
-    this.props.navigation.push('Sign')
+    this.props.navigation.push('Registration')
   }
 
   _renderDoneButton = () => {

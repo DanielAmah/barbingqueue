@@ -41,6 +41,10 @@ export default class Thank extends React.Component {
       return true;
   };
 
+  handleSwitchMain = () => {
+    this.props.navigation.push('Main')
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -56,7 +60,7 @@ export default class Thank extends React.Component {
         <Text style={{textAlign: 'center', fontSize: 18,  marginTop: 40}}>1 Grafon Street, BN2 1AQ</Text>
         <Content style={{marginTop: 80}}>
         <Icon ios='ios-checkmark-circle' android="ios-checkmark-circle" style={{fontSize: 70, color: "green",
-        marginRight: Platform.OS === 'ios' ? 100 : 100, marginLeft: Platform.OS === 'ios' ? 170 : 180 }}  />
+        marginRight: Platform.OS === 'ios' ? 100 : 100, marginLeft: Platform.OS === 'ios' ? 170 : 180 }} onPress={this.handleSwitchMain} />
         </Content>
       </Content>
       </Content>

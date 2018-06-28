@@ -41,6 +41,14 @@ export default class JoinQueue extends React.Component {
       return true;
   };
 
+  handleJoinQueue = () => {
+    this.props.navigation.push('paymentPage')
+  }
+
+  handleSwitchMain = () => {
+    this.props.navigation.push('Main')
+  }
+
   render() {
     return (
       <ImageBackground source={require('./assets/images/home_background.png')}
@@ -124,12 +132,12 @@ export default class JoinQueue extends React.Component {
           <Content style={{marginTop: 120}}>
           <Grid>
           <Col style={{marginLeft: 30}}>
-          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#01041F'}} onPress={this.handleSignLoginClick}>
+          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#01041F'}} onPress={this.handleJoinQueue}>
           <Text style={{textAlign: 'center',  color: '#ffffff' }}>Join Queue</Text>
           </Button>
           </Col>
           <Col style={{marginLeft: 20}}>
-          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#41021B'}} onPress={this.handleSignLoginClick}>
+          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#41021B'}} onPress={this.handleSwitchMain} >
           <Text style={{textAlign: 'center',  color: '#ffffff' }}>Cancel</Text>
           </Button>
           </Col>

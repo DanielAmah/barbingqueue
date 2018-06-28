@@ -41,6 +41,10 @@ export default class Queue extends React.Component {
       return true;
   };
 
+  handleSwitchMain = () => {
+    this.props.navigation.push('Main')
+  }
+
   render() {
     return (
       <ImageBackground source={require('./assets/images/home_background.png')}
@@ -116,19 +120,11 @@ export default class Queue extends React.Component {
           </Col>
             </Grid>
           </Content>
-          <Content style={{marginTop: 120}}>
-          <Grid>
-          <Col style={{marginLeft: 30}}>
-          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#01041F'}} onPress={this.handleSignLoginClick}>
-          <Text style={{textAlign: 'center',  color: '#ffffff' }}>Postpone</Text>
-          </Button>
-          </Col>
-          <Col style={{marginLeft: 20}}>
-          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#41021B'}} onPress={this.handleSignLoginClick}>
+          <Content style={{marginTop: 120, marginRight: Platform.OS === 'ios' ? 100 : 100, marginLeft: Platform.OS === 'ios' ? 100 : 100}}>
+
+          <Button rounded style={{padding: 20, width: 120, justifyContent: 'center', backgroundColor: '#41021B'}} onPress={this.props.onCancel}>
           <Text style={{textAlign: 'center',  color: '#ffffff' }}>Cancel</Text>
           </Button>
-          </Col>
-          </Grid>
           </Content>
         </Content>
       </Container>

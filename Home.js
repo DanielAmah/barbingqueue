@@ -50,6 +50,22 @@ export default class Home extends React.Component {
       return true;
   };
 
+  handleSearch = () => {
+    this.props.navigation.navigate("SearchPage");
+  }
+
+  handleQueueCancel = () => {
+    this.props.navigation.push('Main')
+  }
+
+  handleSignOut = () => {
+    this.props.navigation.push('Registration')
+  }
+
+  handleQueue = () => {
+    this.props.navigation.push('queue')
+  }
+
   render() {
     let AppComponent = null;
     if (this.state.index == 0) {
@@ -67,7 +83,12 @@ export default class Home extends React.Component {
       <Container>
 
       <Content scrollEnabled={false}>
-      <AppComponent/>
+      <AppComponent
+      onPress={this.handleSearch}
+      onCancel={this.handleQueueCancel}
+      onSignOut={this.handleSignOut}
+      onChangeProfile={this.handleQueue}
+      />
       </Content>
 
       <Footer style={{backgroundColor: '#FFFFFF'}}>
