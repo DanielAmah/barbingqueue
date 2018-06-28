@@ -48,13 +48,13 @@ export default class Home extends React.Component {
       style={styles.backgroundImage}>
       <Container>
         <Content showsVerticalScrollIndicator={false} style={{ flexDirection: 'row',  top: (Dimensions.get('window').height / 5) - 10}}>
-          <Text style={{color: '#CF87A4', fontSize: 36, fontWeight: '900', left: (Dimensions.get('window').width / 4) - 10}}> SEARCH </Text>
-          <Text style={{color: '#fff', fontSize: 20, left: (Dimensions.get('window').width / 4) - 10}}> for barbers nearby </Text>
+          <Text style={{color: '#CF87A4', fontSize: 36, fontWeight: '900', left: (Dimensions.get('window').width / 4) + 10}}> SEARCH </Text>
+          <Text style={{color: '#fff', fontSize: 20, left: (Dimensions.get('window').width / 4) + 10}}> for barbers nearby </Text>
           <View style={{marginTop: 80, height: 1, backgroundColor: '#CF87A4', width: (Dimensions.get('window').width), top: 20 }}></View>
         </Content>
-        <Content style={{ flexDirection: 'row', top: (Dimensions.get('window').height / 7) - 10}}>
-        <Text style={{color: '#CF87A4', fontSize: 36, fontWeight: '900', left: (Dimensions.get('window').width / 3) - 10}}> JOIN </Text>
-        <Text style={{color: '#fff', fontSize: 20, left: (Dimensions.get('window').width / 6) - 10}}> a queue and wait for your turn </Text>
+        <Content style={{ top: (Dimensions.get('window').height / 7) - 10}}>
+        <Text style={{color: '#CF87A4', fontSize: 36, fontWeight: '900', left: (Dimensions.get('window').width / 3) + 10}}> JOIN </Text>
+        <Text style={{color: '#fff', fontSize: 20, left: (Dimensions.get('window').width / 6) + 10}}> a queue and wait for your turn </Text>
       </Content>
       </Container>
       </ImageBackground>

@@ -43,6 +43,9 @@ export default class SignIn extends React.Component {
       return true;
   };
 
+  emailRegistration = () => {
+    this.props.navigation.navigate("EmailRegistration");
+  }
   render() {
     return (
       <ImageBackground source={require('./assets/images/app_background.png')}
@@ -73,7 +76,7 @@ export default class SignIn extends React.Component {
 
             <View style={styles.buttonCircle}>
             <Icon ios='ios-arrow-dropright-outline' android="ios-arrow-dropright-outline"
-            style={{fontSize: 60, color: "#CF87A4"}}  />
+            style={{fontSize: 60, color: "#CF87A4"}}   onPress={this.emailRegistration} />
             </View>
           </Content>
         </Form>

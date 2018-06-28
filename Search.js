@@ -47,6 +47,10 @@ export default class Search extends React.Component {
       return true;
   };
 
+  handleSearch = () => {
+    navigation.navigate("SearchPage");
+  }
+
   render() {
     return (
 
@@ -65,7 +69,7 @@ export default class Search extends React.Component {
       <Icon ios='ios-search-outline' android="ios-search" style={{fontSize: 25, color: "#FFF"}}  />
       <Input placeholder='E.g Manchester' placeholderTextColor="#FFF" style={{ color: "#FFF" }} value="" />
       </Item>
-      <Button style={styles.buttonCircle}>
+      <Button style={styles.buttonCircle} onPress={this.props.onPress}>
     <Icon ios='ios-search-outline' android="ios-search"
     style={{fontSize: 30, color: "#FFF"}}  />
     </Button>

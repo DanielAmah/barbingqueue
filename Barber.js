@@ -48,6 +48,10 @@ export default class Barber extends React.Component {
       return true;
   };
 
+  handleQueue = ()=> {
+    this.props.navigation.push('joinQueue')
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -139,7 +143,7 @@ export default class Barber extends React.Component {
           </List>
       </Content>
       <Footer style={{backgroundColor: '#fff', borderColor: 'transparent', borderWidth: 0 }}>
-      <Button rounded style={{padding: 20, width: 200, justifyContent: 'center', backgroundColor: '#CF87A4'}} onPress={this.handleSignLoginClick}>
+      <Button rounded style={{padding: 20, width: 200, justifyContent: 'center', backgroundColor: '#CF87A4'}} onPress={this.handleQueue}>
       <Text style={{textAlign: 'center',  color: '#ffffff', fontSize: 18 }}>Join Queue</Text>
       </Button>
       </Footer>

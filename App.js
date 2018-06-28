@@ -19,7 +19,11 @@ import SearchPage from './searchPage';
 import Barber from './Barber';
 import Thank from './Thank';
 import JoinQueue from './JoinQueue';
-
+import PaymentPage from './PaymentPage';
+import EmailRegistration from './EmailRegistration';
+import PasswordSetup from './PasswordSetup';
+import Search from './Search';
+import queue from './Queue';
 type Props = {};
 
 const RootStack = createStackNavigator({
@@ -29,13 +33,18 @@ const RootStack = createStackNavigator({
   ForgotPassword: ForgotPassword,
   Main: Home,
   Registration: Registration,
-  search: SearchPage,
+  SearchPage: SearchPage,
   barber: Barber,
   thank: Thank,
-  joinQueue: JoinQueue
+  joinQueue: JoinQueue,
+  paymentPage:  PaymentPage,
+  EmailRegistration: EmailRegistration,
+  PasswordSetup: PasswordSetup,
+  MainSearch: Search,
+  queue: queue
   },
   {
-    initialRouteName: 'joinQueue'
+    initialRouteName: 'Main'
   }
 );
 
@@ -56,6 +65,7 @@ export default class App extends Component<Props> {
       <SignIn navigation={this.props.navigation}/>
       <ForgotPassword navigation={this.props.navigation}/>
       <Home navigation={this.props.navigation}/>
+      // <Search navigation={this.props.navigation} />
     </View>
     return (
       <RootStack />
